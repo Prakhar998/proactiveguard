@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proactiveguard"
+version = "0.1.0"
+description = "Predictive failure detection for distributed consensus systems (etcd, Raft, CockroachDB)"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Maya Plus" }
+]
+keywords = [
+    "distributed-systems", "failure-detection", "machine-learning",
+    "etcd", "raft", "consensus", "predictive", "monitoring"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Monitoring",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.9"
+
+dependencies = [
+    "requests>=2.28.0",
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.0.0",
+    "responses>=0.25.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage      = "https://proactiveguard.io"
+Documentation = "https://docs.proactiveguard.io"
+Repository    = "https://github.com/Prakhar998/proactiveguard"
+Issues        = "https://github.com/Prakhar998/proactiveguard/issues"
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["proactiveguard*"]
+
+[tool.black]
+line-length    = 99
+target-version = ["py39"]
+
+[tool.ruff]
+line-length = 99
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts   = "-v --tb=short"
