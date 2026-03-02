@@ -19,7 +19,7 @@ class HTTPClient:
             {
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
-                "User-Agent": "proactiveguard-python/0.1.0",
+                "User-Agent": "proactiveguard-python/0.2.0",
             }
         )
         self.base_url = base_url.rstrip("/")
