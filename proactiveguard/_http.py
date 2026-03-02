@@ -19,7 +19,7 @@ class HTTPClient:
             {
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
-                "User-Agent": "proactiveguard-python/0.2.0",
+                "User-Agent": "proactiveguard-python/0.2.1",
             }
         )
         self.base_url = base_url.rstrip("/")
@@ -41,7 +41,7 @@ class HTTPClient:
 
     @staticmethod
     def _handle(resp: requests.Response) -> Dict:
-        if resp.status_code == 401 or resp.status_code == 403:
+        if resp.status_code in (401, 403):
             raise AuthenticationError()
         if resp.status_code == 429:
             raise RateLimitError()

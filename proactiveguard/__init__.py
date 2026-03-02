@@ -31,7 +31,7 @@ from ._http import _DEFAULT_BASE_URL, _DEFAULT_TIMEOUT, HTTPClient
 from .exceptions import APIError, AuthenticationError, InsufficientDataError, RateLimitError
 from .types import PredictionResult
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 __all__ = [
     "ProactiveGuard",
     "PredictionResult",
